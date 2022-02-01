@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+
+            /* vh即窗口被分成一百等分相当于 vh = 窗口/100 */
+            height: 100vh;
+            display: flex;
+            /* 水平居中 */
+            justify-content: center;
+            /* 垂直居中 */
+            align-items: center;
+        }
+
+        .heart {
+            width: 200px;
+            height: 200px;
+            border: solid 1px #000;
+            position: relative;
+            background: red;
+            transform: rotate(45deg);
+        }
+
+        .heart::before {
+	/* content 属性与 :before 及 :after 伪元素配合使用，来插入生成内容 */
+            content: '';
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            position: absolute;
+            background: red;
+            left: 0;
+            top: 0;
+        }
+
+        .heart::after {
+            content: '';
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            position: absolute;
+            background: red;
+            left: 0;
+            top: 0;
+        }
+
+        .heart::before {
+            left: -100px;
+        }
+
+        .heart::after {
+            top: -100px;
+        }
+    </style>
+
+    <div class="heart">
+        
+    </div>
+</body>
+</html>
